@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Images Example</title>
+<style>
+    img {
+        width: 100%;
+    }
+
+    body {
+        background-image: url('https://picsum.photos/800/600');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+</style>
+</head>
+<body>
+
+<!-- Example images using URLs -->
+<img src="https://picsum.photos/id/1015/400/300" alt="Flowers in Chania">
+<img src="https://picsum.photos/id/1027/500/600" alt="Girl in a jacket" style="width:500px;height:600px;">
+<img src="https://picsum.photos/id/1025/460/345" alt="Flowers in Chania" style="width:460px;height:345px;">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/HTML5_logo_and_wordmark.svg" alt="HTML5 Icon" width="128" height="128">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/HTML5_logo_and_wordmark.svg" alt="HTML5 Icon" style="width:128px;height:128px;">
+
+<!-- Image as a link -->
+<a href="https://www.w3schools.com">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/W3C_valid.png/42px-W3C_valid.png" alt="HTML tutorial" style="width:42px;height:42px;">
+</a>
+
+<!-- Float examples -->
+<p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/W3C_valid.png/42px-W3C_valid.png" alt="Smiley face" style="float:right;width:42px;height:42px;">
+    The image will float to the right of the text.
+</p>
+<p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/W3C_valid.png/42px-W3C_valid.png" alt="Smiley face" style="float:left;width:42px;height:42px;">
+    The image will float to the left of the text.
+</p>
+
+<!-- Picture element example -->
+<picture>
+    <source media="(min-width: 650px)" srcset="https://picsum.photos/id/1040/650/400">
+    <source media="(min-width: 465px)" srcset="https://picsum.photos/id/1039/465/300">
+    <img src="https://picsum.photos/id/1038/400/300" alt="Girl in a jacket">
+</picture>
+
+</body>
+</html>
