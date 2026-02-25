@@ -12,14 +12,26 @@
 
     <main class="container">
         <h1>ToDo List</h1>
-        
+
         <div class="input-group">
-            <input type="text" id="todo-input" placeholder="New Task">
+            <input 
+                type="text" 
+                id="todo-input" 
+                name="taskName"
+                placeholder="Enter task name"
+                autocomplete="off"
+            >
             <button id="add-btn">Add</button>
         </div>
 
+   
+        <div class="counter">
+            <p>Total tasks: <span id="total-count">0</span></p>
+            <p>Completed tasks: <span id="completed-count">0</span></p>
+        </div>
+
         <ul id="todo-list">
-            </ul>
+        </ul>
     </main>
 
     <script src="script.js"></script>

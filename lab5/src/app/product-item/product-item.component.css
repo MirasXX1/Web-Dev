@@ -1,0 +1,144 @@
+.product-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  margin: 18px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: none;
+}
+
+.product-image-container {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.product-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 16px 16px 0 0;
+}
+
+.product-content {
+  padding: 22px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: #3a4247;
+  line-height: 1.2;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 20px;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #f5a623;
+  margin-bottom: 8px;
+}
+
+.product-rating i {
+  margin-right: 3px;
+  font-size: 12px;
+}
+
+.product-likes {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.product-actions button {
+  background-color: #f25c4d;
+  color: #fff;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.share-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.share-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  min-width: 170px;
+  padding: 8px 0;
+  z-index: 1;
+}
+
+.share-dropdown:hover .share-dropdown-content {
+  display: block;
+}
+
+.share-dropdown-content a {
+  color: #444;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.share-dropdown-content a:hover {
+  background-color: #f25c4d;
+  color: #fff;
+}

@@ -1,0 +1,49 @@
+<div class="product-card">
+  <div class="product-image-container">
+    <img class="product-image" [src]="mainImageUrl" alt="{{ product?.name }}">
+  </div>
+
+  <div class="product-content">
+    <h2 class="product-name">{{ product?.name }}</h2>
+    <p class="product-description">{{ product?.description }}</p>
+    <p class="product-rating">Рейтинг: {{ product?.rating }}</p>
+    <p class="product-likes">Лайков: {{ product?.likes }}</p>
+
+    <div class="product-actions">
+      <button (click)="likeProduct()">
+        Like
+      </button>
+
+      <div class="share-dropdown">
+        <button (click)="toggleShareDropdown()">
+          Поделиться
+        </button>
+
+        <div class="share-dropdown-content" *ngIf="showShareDropdown">
+            <a (click)="share('whatsapp')">WhatsApp</a>
+            <a (click)="share('facebook')">Facebook</a>
+            <a (click)="share('telegram')">Telegram</a>
+            <a (click)="copyToClipboard()">Скопировать ссылку</a>
+        </div>
+      </div>
+
+      <button (click)="deleteProduct()">
+        Удалить
+      </button>
+    </div>
+
+    <div class="gallery" *ngIf="product?.images?.length > 0; else noImages">
+      <img *ngFor="let img of product?.images"
+           [src]="img"
+           alt="gallery image"
+           (click)="setMainImage(img)">
+    </div>
+
+    <ng-template #noImages>
+      <div class="gallery">
+        Нет изображений
+      </div>
+    </ng-template>
+
+  </div>
+</div>
