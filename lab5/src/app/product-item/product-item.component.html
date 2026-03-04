@@ -7,11 +7,11 @@
     <h2 class="product-name">{{ product?.name }}</h2>
     <p class="product-description">{{ product?.description }}</p>
     <p class="product-rating">Рейтинг: {{ product?.rating }}</p>
-    <p class="product-likes">Лайков: {{ product?.likes }}</p>
+    <p class="product-likes">Лайков: {{ product.likes }}</p>
 
     <div class="product-actions">
-      <button (click)="likeProduct()">
-        Like
+      <button (click)="toggleLike()" [class.liked]="product.liked">
+        {{ product.liked ? 'Liked' : 'Like' }}
       </button>
 
       <div class="share-dropdown">

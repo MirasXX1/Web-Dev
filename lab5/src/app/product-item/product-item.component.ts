@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+//для каж прод добавны свтва li хранящее кол лайков и liked показывающее 
+// поставил ли пользователь лайк.
 @Component({
   selector: 'app-product-item',
   standalone: true,
@@ -11,32 +12,29 @@ import { CommonModule } from '@angular/common';
 export class ProductItemComponent implements OnInit {
   @Input() product: any; 
   @Output() delete = new EventEmitter<number>(); 
-  
+  //Кн вып дво фу: если лайк есть удаляет его  если нет ставит лайк count++ 
+  // а статус лайка меняется через this.product.liked = !this.product.liked.
   mainImageUrl: string = '';
   showShareDropdown = false;
-
   ngOnInit(): void {
-
     if (this.product?.images?.length > 0) {
       this.mainImageUrl = this.product.images[0];
     }
 
-
-    const savedLikes = localStorage.getItem(`product_${this.product.id}_likes`);
-    if (savedLikes) {
-      this.product.likes = parseInt(savedLikes, 10);
-    }
+    if (this.product.likes === undefined) this.product.likes = 0;
+    if (this.product.liked === undefined) this.product.liked = false;
   }
-
   setMainImage(imageUrl: string): void {
     this.mainImageUrl = imageUrl;
   }
-
-  likeProduct() {
-    this.product.likes++;
-    localStorage.setItem(`product_${this.product.id}_likes`, this.product.likes.toString());
+  toggleLike() {
+    if (this.product.liked) {
+      this.product.likes--;
+    } else {
+      this.product.likes++;
+    }
+    this.product.liked = !this.product.liked;
   }
-
 
   share(platform: string) {
     const text = `Посмотрите этот товар: ${this.product.name}`;

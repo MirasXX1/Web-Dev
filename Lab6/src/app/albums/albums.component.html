@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h2>Albums</h2>
+  <p>Click on an album title to view its details and photos.</p>
+
+  <div *ngIf="isLoading" class="text-center my-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading" class="list-group">
+    <div *ngFor="let album of albums" class="list-group-item d-flex justify-content-between align-items-center">
+      <a [routerLink]="['/albums', album.id]" class="text-decoration-none">
+        {{ album.id }}. {{ album.title }}
+      </a>
+      <button class="btn btn-danger btn-sm" (click)="deleteAlbum(album.id)">Delete</button>
+    </div>
+  </div>
+</div>
