@@ -1,12 +1,21 @@
 from models import Car, Motorcycle
 
 def main():
+    ##так бул жерде биз обьект курамыз 
+    
+    
     
     my_car = Car("Toyota", "Camry", 2023, "Petrol")
     my_bike = Motorcycle("Yamaha", "MT-07", 2022, False)
+    
+    ##бул жерди биз еки машина мен мотоны бир листка салып циклмен жумыс жасайтын кыламыз
 
     
     vehicles = [my_car, my_bike]
+    
+    ##2Вызывается метод запуска двигателя
+    ##3Выполняется перемещение объекта
+    
 
     print("--- Vehicle Demonstration ---")
     for v in vehicles:

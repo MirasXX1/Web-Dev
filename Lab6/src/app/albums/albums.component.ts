@@ -25,14 +25,21 @@ export class AlbumsComponent implements OnInit {
       },
       error: () => {
         this.isLoading = false;
-        alert('Деректерді алу мүмкін болмады!');
+        alert('Failed to fetch data!');
       }
     });
   }
 
   deleteAlbum(id: number): void {
-    this.albumsService.deleteAlbum(id).subscribe(() => {
-      this.albums = this.albums.filter(album => album.id !== id);
-    });
+    const confirmDelete = confirm('ты точно хочешь удалить?');
+
+    if (confirmDelete) {
+      this.albumsService.deleteAlbum(id).subscribe(() => {
+        this.albums = this.albums.filter(album => album.id !== id);
+        alert('aльбом успешно удалена!');
+      }, error => {
+        alert('не получилось!');
+      });
+    }
   }
 }

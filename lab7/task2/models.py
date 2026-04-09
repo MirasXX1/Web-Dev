@@ -6,9 +6,14 @@ class Vehicle:
 
     def start_engine(self):
         return f"The engine of {self.make} {self.model} is starting..."
-
+    
     def drive(self):
         return f"{self.make} is moving."
+    
+    ##распечатать объект
+##Доступ к свойству make этого объекта осуществляется следующим образом:
+
+
 
     def __str__(self):
         return f"{self.year} {self.make} {self.model}"
@@ -18,7 +23,9 @@ class Car(Vehicle):
     def __init__(self, make, model, year, fuel_type):
         super().__init__(make, model, year)
         self.fuel_type = fuel_type
-
+        
+##Описывает фактическое поведение автомобиля.
+##так биз бул жерде бензин коямыз 
 
     def drive(self):
         return f"The {self.model} car is driving smoothly on the road."
